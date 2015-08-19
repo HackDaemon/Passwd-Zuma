@@ -9,14 +9,16 @@ import logging
 logger = logging.getLogger('passzm')
 
 def main():
-	if len(sys.argv) > 2:
-		logger.critical('Invalid number of parameters, the program can not be executed!')
-		logger.critical('Program going to exit!')
+	if len(sys.argv) > 2 or len(sys.argv) == 1:
+		logger.error('Invalid number of parameters, the program can not be executed!')
+		logger.error('Program going to exit!')
 		sys.exit()
-
-	path = sys.argv[1]
-	rawtxt = io.readRawFile(path)
-	result = zuma.spiral(rawtxt)
+	try:
+		path = sys.argv[1]
+		rawtxt = io.readRawFile(path)
+		result = zuma.spiral(rawtxt)
+	except IOError:
+		logger.error('Not such data file!')
 
 
 if __name__ == '__main__':
