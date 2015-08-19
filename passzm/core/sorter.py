@@ -8,9 +8,22 @@ def pickup(filestr):
 	# return config, classify
 
 def pickupConfig(lines):
+	start = False
+	config = []
 	for line in lines:
-		if line.strip() == '[config]':
-			pass
+		line = line.strip()
+		if line == '':
+			continue
+		if line == '[config]':
+			start = True
+		else:
+			if line[0] == '[':
+				break
+			elif start is True:
+
+				key, value = lambda()
+				config.append(line)
+	return config
 
 
 def pickupClass(lines):
