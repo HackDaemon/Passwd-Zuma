@@ -3,13 +3,14 @@ def pickup(filestr):
 	lines = filestr.split('\n')
 	config = pickupConfig(lines)
 	classify = pickupClass(lines)
+
 	print config
 	print classify
 	# return config, classify
 
 def pickupConfig(lines):
 	start = False
-	config = []
+	config = {}
 	for line in lines:
 		line = line.strip()
 		if line == '':
@@ -20,9 +21,10 @@ def pickupConfig(lines):
 			if line[0] == '[':
 				break
 			elif start is True:
-
-				key, value = lambda()
-				config.append(line)
+				kv = line.split('=')
+				key = kv[0].strip()
+				value = kv[1].strip()
+				config[key] = value
 	return config
 
 
@@ -37,7 +39,7 @@ def pickupClass(lines):
 					classify[currentClass] = []
 			elif currentClass != '':
 				classify[currentClass].append(line.strip())
-	return classify
+				return classify
 
 
 
