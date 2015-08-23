@@ -16,3 +16,5 @@ class Zuma:
 	def register(self, tactice):
 		pass
 
+	def run(self):
+		pass
