@@ -1,16 +1,33 @@
+from fn import _
 
+strs = [
+	'123',
+	'1234',
+	'123456',
+	'456',
+	'789',
+	'abc',
+	'111',
+	'234'
+	'qwerty'
+	'qwe'
+	'888'
+	'666'
+	'555',
+	'444',
+	'333',
+	'222',
+	'999',
+	'000',
+	'abab',
+	'bbbb',
+	'ccc',
+	'bbb',
+]
 
-def add1(mate):
-	return mate + '123'
+def addAfter(mate):
+	return list(map(mate + _, strs))
 
-def add2(mate):
-	return mate + '123456'
+def addBefore(mate):
+	return list(map(_ + mate, strs))
 
-def add3(mate):
-	return mate + '456'
-
-def add4(mate):
-	return mate + '789'
-
-def add5(mate):
-	return mate + '111'
