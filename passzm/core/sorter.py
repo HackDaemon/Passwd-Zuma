@@ -3,10 +3,7 @@ def pickup(filestr):
 	lines = filestr.split('\n')
 	config = pickupConfig(lines)
 	classify = pickupClass(lines)
-
-	print config
-	print classify
-	# return config, classify
+	return config, classify
 
 def pickupConfig(lines):
 	start = False

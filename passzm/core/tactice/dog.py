@@ -1,12 +1,15 @@
 from core.rule.rulemap import rulemap
-from fn.uniform import map
+from core.util import unpackList
+
+from fn.uniform import map, reduce
+
 
 rules =[
 	rulemap['add'],
 ]
 
 def run(classify):
-	return list(map(map()))
+	return list(map(map(unpackList, rules), classify))
 
 
 if __name__ == '__main__':
