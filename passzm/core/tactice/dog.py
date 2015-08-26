@@ -9,7 +9,9 @@ rules =[
 ]
 
 def run(classify):
-	return list(map(map(unpackList, rules), classify))
+	def applyRule(rule):
+		return list(map(rule, classify))
+	return list(map(applyRule ,unpackList(rules)))
 
 
 if __name__ == '__main__':
