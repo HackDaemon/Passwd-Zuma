@@ -36,7 +36,7 @@ def pickupClass(lines):
 					classify[currentClass] = []
 			elif currentClass != '':
 				classify[currentClass].append(line.strip())
-				return classify
+	return classify
 
 
 

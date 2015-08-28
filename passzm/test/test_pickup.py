@@ -1,12 +1,16 @@
 import unittest
-from core import sorter
+from core import io
 
-class TestSorter(unittest.TestCase):
+class TestPickup(unittest.TestCase):
 
 	def test_pickupHasHan(self):
 		raw = open('test/data/simple.txt', 'r').read()
 		ioreaded = io.readRawFile('test/data/simple.txt')
+
 		self.assertEqual(raw, ioreaded)
+
+
+
 
 if __name__ == '__main__':
 	unittest.main()

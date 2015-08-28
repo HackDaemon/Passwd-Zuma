@@ -10,7 +10,9 @@ rules =[
 
 def run(classify):
 	def applyRule(rule):
-		return list(map(rule, classify))
+		def mapClass(className):
+			return list(map(rule, classify[className]))
+		return list(map(mapClass, classify))
 	return list(map(applyRule ,unpackList(rules)))
 
 

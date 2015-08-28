@@ -10,8 +10,7 @@ class TestDog(unittest.TestCase):
 		rawtxt = readRawFile('test/data/simple.txt')
 		config, classify = pickup(rawtxt)
 		rst = dog.run(classify)
-		print rst
-
+		self.assertEqual(rst[0][0][0][0], '123shenzhen')
 
 
 if __name__ == '__main__':
