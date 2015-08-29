@@ -1,12 +1,22 @@
 # coding=utf-8
 from pypinyin import lazy_pinyin
 
+
+
 def hasHan(text):
-	return all(u'\u4e00' <= char <= u'\u9fff' for char in text.decode("utf-8"))
+	if isinstance(text, unicode):
+		xtext = text
+	else:
+		xtext = unicode(text,'utf-8')
+	return all(u'\u4e00' <= char <= u'\u9fff' for char in xtext)
 
 def han2Pinyin(text):
 	if hasHan(text):
-		return lazy_pinyin(text)[0]
+		if isinstance(text, unicode):
+			xtext = text
+		else:
+			xtext = unicode(text,'utf-8')
+		return lazy_pinyin(xtext)[0]
 	else:
 		return text
 
