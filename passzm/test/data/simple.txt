@@ -1,6 +1,6 @@
 [config]
 level=3
-verbose=true
+verbose=True
 
 [name]
 mahuafeng

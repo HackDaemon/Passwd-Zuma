@@ -3,11 +3,8 @@ from core import io
 
 class TestPickup(unittest.TestCase):
 
-	def test_pickupHasHan(self):
-		raw = open('test/data/simple.txt', 'r').read()
-		ioreaded = io.readRawFile('test/data/simple.txt')
-
-		self.assertEqual(raw, ioreaded)
+	def test_pickExtra(self):
+		pass
 
 
 

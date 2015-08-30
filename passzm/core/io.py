@@ -4,7 +4,9 @@ def readRawFile(path):
 	return f
 
 def op2Console(result):
-	pass
+	print '\n'.join(result)
 
-def op2File(result):
-	pass
+def op2File(result, filename='output2.txt'):
+	f = open(filename, 'w')
+	map(f.write, result)
+	f.close()

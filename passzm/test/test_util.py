@@ -11,8 +11,23 @@ class TestUtil(unittest.TestCase):
 			[1]
 		]
 		rst = util.unpackList(lists)
-		print rst
 		self.assertEqual(len(rst), 10)
+
+	def test_unpackListRecur(self):
+		lists = [
+			[88, 2, 3, 4],
+			[1, 2, 3],
+			[1, 2],
+			[1],
+			[5],
+			[11,[
+				12, 13, 14, 15, [
+					's', 'b'
+				]
+			]]
+		]
+		rst = util.unpackStrListRecur(lists)
+		self.assertEqual(len(rst), 18)
 
 
 if __name__ == '__main__':

@@ -16,14 +16,19 @@ class TestPinyin(unittest.TestCase):
 			self.assertEqual(pinyin.han2Pinyin(u'猫'), u'mao')
 			self.assertEqual(pinyin.han2Pinyin(u'狗'), u'gou')
 			self.assertEqual(pinyin.han2Pinyin(u'狼'), u'lang')
+			self.assertEqual(pinyin.han2Pinyin(u'狼狗'), u'langgou')
 			self.assertEqual(pinyin.han2Pinyin(u'cat'), u'cat')
 
 	def test_classPinyinify(self):
 		rawtxt = readRawFile('test/data/simpleHasHan.txt')
-
 		config, classify = pickup(rawtxt)
 		rst = pinyin.classPinyinify(classify)
 		self.assertEqual(rst[0][3], 'chaozhao')
+
+	def test_segmentation(self):
+		rst = pinyin.segmentation(u'拼音分词')
+		self.assertEqual(rst[0], u'pin')
+		self.assertEqual(rst[2], u'fen')
 
 
 if __name__ == '__main__':
