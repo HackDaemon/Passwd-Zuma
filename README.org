@@ -1,0 +1,6 @@
+* Passwd-Zuma
+
+社会工程学密码生成工具,收集姓名，手机号码，生日之类的生成大量密码序列供爆破
+
+** Usage:
+python zuma/passzm.py <basestrings.txt>
